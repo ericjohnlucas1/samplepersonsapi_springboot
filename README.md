@@ -35,21 +35,7 @@ It is also important to have debug logs to see what might have went wrong. I wou
 
 ## SQL
 
-Given the following schema
-```CREATE TABLE `user_debug` (
-`id` int NOT NULL AUTO_INCREMENT,
-`version` mediumint unsigned NOT NULL DEFAULT '1',
-`member_id` int NOT NULL,
-`debug_level` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
-`create_date` datetime NOT NULL,
-`update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE
-CURRENT_TIMESTAMP,
-PRIMARY KEY (`id`),
-UNIQUE KEY `ud_umid` (`member_id`),
-CONSTRAINT `ud_mid` FOREIGN KEY (`member_id`) REFERENCES `member` (`id`)
-
-) ENGINE=InnoDB AUTO_INCREMENT=11802 DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_general_ci```
+Given the following schema given in the problem statement:
 
 To set debug_level to 'NONE' if the last time the row was updated is more than 10 days in the past, I would run the following SQL:
 
