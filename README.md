@@ -48,4 +48,4 @@ WHERE update_date < NOW()-interval 10 day
 
 I have manually tested this through many different cases, as well as writting a basic automated test using `org.springframework.test.web.servlet.result.MockMvcResultHandlers`. 
 
-This test can be found at
+This test can be found in this repository at `/src/test/java/com/example/restservice/RestControllerTests.java`
