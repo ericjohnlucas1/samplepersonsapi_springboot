@@ -41,7 +41,8 @@ To set debug_level to 'NONE' if the last time the row was updated is more than 1
 
 ```UPDATE user_debug
 SET debug_level = 'NONE'
-WHERE update_date < NOW()-interval 10 day```
+WHERE update_date < NOW()-interval 10 day
+```
 
 ## Testing
 
