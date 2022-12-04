@@ -2,7 +2,9 @@
 
 This repository contaions my solution to the Backend Engineer Homework Assignment. For convience, the assignment PDF is in this repository as "Backend_Engineer_Homework_Assignment.pdf"
 
-## The Spring Boot API was implemented as requested using Maven as the build automation tool. Endpoints are as follows:
+## Spring Boot API
+
+The Spring Boot API was implemented as requested using Maven as the build automation tool. Endpoints are as follows:
 
 1) Create a new Person from input values, a POST will be made to the `/persons` endpoint with a JSON body specifying the input.
 
@@ -23,6 +25,12 @@ This repository contaions my solution to the Backend Engineer Homework Assignmen
 3) To fetch all persons, there is an endpoint `/persons` which will list all of the persons in the database. There is an optional query parameter  `youngerthan` that will only fetch persons younger then the specified integer age.
 
     For example if the call in 1) above was made to create thath person, a subquent request `curl localhost:8080/persons` would return `[{"id":1,"name":"eric","age":10}]`, but `curl localhost:8080/persons?youngerthan=10` will return an empty list
+
+## Scripting
+
+In this repository there is a script I wrote in python called `cumulative_time.py` that calculates the percentage of cumulative time taken running through the endpoints of one or more Spring Boot controllers, and outputing the results sorted from greatest to least. The `controller_endpoint_runthroughs` dictionary at the top of the file can be used to set the controllers and the function for running through the endpoints. I have it currently set to run though the controller of my Spring boot application in two trials.
+
+This solution is based on how I interpreted the problem statement. If it was meant to be interpreted in another way, please shoot me an email and I will correct it accordingly.
 
 ## DevOps
 
