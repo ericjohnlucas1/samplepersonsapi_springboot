@@ -28,7 +28,7 @@ This repository contaions my solution to the Backend Engineer Homework Assignmen
 
 Suppose I have an AWS Application Load Balancer that distributes load to 3 EC2 instances running identical server processes. The ALB is assigned a DNS A Record by AWS, and we have a CNAME alias to that A Record.
 
-To be notified if this service is not working, I would have an endpoint health check configured in route 53 with a Amazon CloudWatch alarm to notify the appropriate engineer if the service stops working.
+To be notified if this service is not working, I would have an endpoint health check configured in route 53 with a Amazon CloudWatch alarm to notify the appropriate engineer if the service stops working. For my spring boot sample application, the fetch persons endpoint(GET `/persons`) would be a good health check endpoint because it always return 202 OK no matter what is in the database.
 
 It is also important to have debug logs to see what might have went wrong. I would have the logs from the application running on EC2 streamed to cloudwatch to accomplish this.
 
