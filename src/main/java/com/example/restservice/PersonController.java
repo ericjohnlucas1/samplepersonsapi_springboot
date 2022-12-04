@@ -22,12 +22,12 @@ public class PersonController {
 	private HashMap<Long, Person> mockDatabase = new HashMap<>();
 
 	@PostMapping("/persons")
-	public ResponseEntity<Object> newPerson(@RequestBody Person newPerson) throws Exception {
+	public ResponseEntity<Object> newPerson(@RequestBody Person newPerson) {
 		long id = counter.incrementAndGet();
 		newPerson.setId(id);
 		if (newPerson.getName()==null){
-			Error e = new Error("A valid name is required in the request body", 417);
-			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(e);
+			Error e = new Error("A valid name is required in the request body", 400);
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e);
 		}
 		Person person = new Person(id, newPerson.getName(), newPerson.getAge());
 		mockDatabase.put(id,person);
@@ -37,15 +37,15 @@ public class PersonController {
 	@GetMapping("/persons/{id}")
 	public ResponseEntity<Object> fetchPerson(@PathVariable Long id){
 		if (mockDatabase.containsKey((id))){
-			return ResponseEntity.status(HttpStatus.FOUND).body(mockDatabase.get(id));
+			return ResponseEntity.status(HttpStatus.OK).body(mockDatabase.get(id));
 		}
 		Error e = new Error("No such person with the specified ID exists", 404);
-		return ResponseEntity.status(HttpStatus.NOT_EXTENDED).body(e);	}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);	}
 
 	@GetMapping("/persons")
 	public ResponseEntity<Object> listPerson(@RequestParam("youngerthan") Optional<Integer> youngerthan){
 		ArrayList<Person> persons =  new ArrayList<>(mockDatabase.values());
 		if (youngerthan.isPresent()) persons.removeIf(person -> person.getAge()>=youngerthan.get());
-		return ResponseEntity.status(HttpStatus.FOUND).body(persons);
+		return ResponseEntity.status(HttpStatus.OK).body(persons);
 	}
 }
