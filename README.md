@@ -1,6 +1,6 @@
 # samplepersonsapi_springboot
 
-This repository contaions my solution to the Backend Engineer Homework Assignment. 
+This repository contaions my solution to the Backend Engineer Homework Assignment. For convience, the assignment PDF is in this repository as "Backend_Engineer_Homework_Assignment.pdf"
 
 ## The Spring Boot API was implemented as requested using Maven as the build automation tool. Endpoints are as follows:
 
