@@ -4,7 +4,7 @@ This repository contaions my solution to the Backend Engineer Homework Assignmen
 
 ## Spring Boot API
 
-The Spring Boot API was implemented as requested using Maven as the build automation tool. Endpoints are as follows:
+The Spring Boot API was implemented as requested using Maven as the build automation tool. The Maven build files are in the root of this repository and the Java source files are under the `src` directory. Endpoints are as follows:
 
 1) Create a new Person from input values, a POST will be made to the `/persons` endpoint with a JSON body specifying the input.
 
