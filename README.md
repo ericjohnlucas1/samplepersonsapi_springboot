@@ -1,4 +1,4 @@
-# samplepersonsapi_springboot
+# Backend Engineer Homework Assignment - Hatch
 
 This repository contaions my solution to the Backend Engineer Homework Assignment. For convience, the assignment PDF is in this repository as "Backend_Engineer_Homework_Assignment.pdf"
 
